@@ -12,21 +12,6 @@ This app fetches the data from Google sheets using sheets API from json files an
 Create your google docs and use the given format for creating JSON code using google script editor 
 Then follow the method given in sheets_api.dart file for getting json data and convert it to dart code.
 
-function doGet() {
-  var sheet=SpreadsheetApp.openById("1YuWmk4kTZXRnJYsA9pqjeUMTY0b-0K_mYnwbKKaDCMo");
-  var values=sheet.getActiveSheet().getDataRange().getValues();
-  var data=[];
 
-  for(var i=1;i<values.length;i++){
-    var row=values[i];
-    var faqs={};
-
-    faqs['questions']=row[0];
-    faqs['faq_answers']=row[1];
-    data.push(faqs);
-  }
-
-  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
-}
 
 
